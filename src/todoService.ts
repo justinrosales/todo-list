@@ -19,7 +19,7 @@ const TodoService = {
     };
     const updateTodos = [...todos, newTodo];
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updateTodos));
-    return updateTodos; //used to be newtodo
+    return newtodo; //used to be newtodo
   },
 
   //update todos // UPDATE
