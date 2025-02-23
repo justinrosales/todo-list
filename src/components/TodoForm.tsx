@@ -1,6 +1,7 @@
+import TodoService from "../TodoServices";
+import TodoTypes from "../TodoTypes";
+
 import React, { Dispatch, SetStateAction, useState } from "react";
-import TodoService from "../todoService";
-import TodoTypes from "../todo";
 
 interface PropTypes {
   setTodos: Dispatch<SetStateAction<TodoTypes[]>>;
@@ -11,7 +12,7 @@ const TodoForm: React.FC<PropTypes> = ({ setTodos }) => {
 
   const handleAddTodo = () => {
     if (newTodoText.trim() !== "") {
-      const newTodo = TodoService.addTodos(newTodoText);
+      const newTodo: TodoTypes = TodoService.addTodos(newTodoText);
       setTodos((prevTodo) => [...prevTodo, newTodo]);
       setNewTodoText("");
     }
@@ -31,3 +32,5 @@ const TodoForm: React.FC<PropTypes> = ({ setTodos }) => {
     </div>
   );
 };
+
+export default TodoForm;

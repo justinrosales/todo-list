@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import TodoTypes from "../todo";
-import TodoService from "../todoService";
+import TodoTypes from "../TodoTypes";
+import TodoService from "../TodoServices";
+import TodoForm from "./TodoForm";
+
+import { useState } from "react";
 import { FaEdit, FaCheck } from "react-icons/fa";
 import { GiCancel } from "react-icons/gi";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-import TodoForm from "./TodoForm";
 
 const ComponentName = () => {
   const [todos, setTodos] = useState<TodoTypes[]>(TodoService.getTodos());
@@ -30,9 +31,7 @@ const ComponentName = () => {
         completed: false,
       });
 
-      setTodos((prevTodos) =>
-        prevTodos.map((todo) => (todo.id === id ? updateTodo : todo))
-      );
+      setTodos(updateTodo);
       setEditedTodoID(null);
       setEditedTodoText("");
     }
@@ -47,7 +46,7 @@ const ComponentName = () => {
   return (
     <div className="todoContainer">
       <div>
-        <TodoForm set />
+        <TodoForm setTodos={setTodos} />
       </div>
       {todos.map((todo) => (
         <div className="items" key={todo.id}>
