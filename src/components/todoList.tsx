@@ -1,6 +1,7 @@
 import TodoTypes from "../TodoTypes";
 import TodoService from "../TodoServices";
 import TodoForm from "./TodoForm";
+import "../css/TodoList.css";
 
 import { useState } from "react";
 import { FaEdit, FaCheck } from "react-icons/fa";

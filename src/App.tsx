@@ -1,5 +1,6 @@
 import { FaPen, FaClipboardList } from "react-icons/fa";
 import TodoList from "./components/TodoList.tsx";
+import "./css/App.css";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <div className="header">
         <div className="logoside">
           <FaPen />
-          <h1> What to do</h1>
+          <h1>Todo List</h1>
           <FaClipboardList />
         </div>
       </div>
